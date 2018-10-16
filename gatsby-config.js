@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     url: 'https://lumen.netlify.com',
     title: 'Blog by Yofine Liu',
-    subtitle: 'Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu.',
+    subtitle: 'Coding for a better world.',
     copyright: '© All rights reserved.',
     disqusShortname: '',
     menu: [
@@ -22,9 +22,9 @@ module.exports = {
     author: {
       name: 'Yofine Liu',
       email: 'yofineliu@gmail.com',
-      telegram: '#',
-      twitter: 'https://twitter.com/yofine2js',
-      github: 'https://github.com/yofine',
+      telegram: 'yofine',
+      twitter: 'yofine2js',
+      github: 'yofine',
       rss: '#',
       vk: '#'
     }
