@@ -29,6 +29,10 @@ module.exports = {
       facebook: 'yofinejs',
       twitter: 'yofine2js',
       github: 'yofine',
+      email: 'yofineliu@gmail.com',
+      telegram: '#',
+      rss: '#',
+      vk: '#'
     }
   },
   plugins: [
@@ -119,7 +123,7 @@ module.exports = {
     'gatsby-plugin-sharp',
     {
       resolve: 'gatsby-plugin-google-analytics',
-      options: { trackingId: 'UA-73379983-2' }
+      options: { trackingId: 'UA-64714074-2' }
     },
     {
       resolve: `gatsby-plugin-google-fonts`,
