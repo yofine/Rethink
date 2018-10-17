@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    url: 'https://lumen.netlify.com',
-    title: 'Blog by Yofine Liu',
+    url: 'https://yofineliu.com',
+    title: 'Yofine Liu',
     subtitle: 'Coding for a better world.',
     copyright: '© All rights reserved.',
     disqusShortname: '',
@@ -11,22 +11,24 @@ module.exports = {
         path: '/'
       },
       {
-        label: 'About me',
-        path: '/about/'
+        label: 'VR',
+        path: '/vr/'
       },
       {
-        label: 'Contact me',
-        path: '/contact/'
+        label: 'WebGL',
+        path: '/webgl/'
+      },
+      {
+        label: 'About',
+        path: '/about/'
       }
     ],
     author: {
       name: 'Yofine Liu',
       email: 'yofineliu@gmail.com',
-      telegram: 'yofine',
+      facebook: 'yofinejs',
       twitter: 'yofine2js',
       github: 'yofine',
-      rss: '#',
-      vk: '#'
     }
   },
   plugins: [
