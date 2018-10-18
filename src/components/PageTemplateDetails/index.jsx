@@ -5,6 +5,7 @@ import './style.scss';
 class PageTemplateDetails extends React.Component {
   render() {
     const page = this.props.data.markdownRemark;
+    debugger
 
     return (
       <div>
