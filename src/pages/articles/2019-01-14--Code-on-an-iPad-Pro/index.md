@@ -18,28 +18,24 @@ Keyboard，12 寸的输入/输出体验更加，但便携性更重要。
 
 用了几天之后，得出了目前的工作流：
 
-![workflow](https://pic3.zhimg.com/50/v2-43e8e1a248540760d585e9a1aaea2d66_hd.png)
-
 1. Notes 和手机持续同步，随时记录一些灵感
 2. 整理灵感，在 XMind 上画出 Mind Map
 3. Blink Shell 连接到 VPS 上编写代码
 4. iA Writer 用来写 Markdown 文档
 
-![blink](https://pic2.zhimg.com/50/v2-ab58730e2bef8ce7e9e52419cca11ff4_hd.gif)
-
 目前在用一个小项目 Let's Vim 论证这个工作流，还没发现太大的问题。除此之外还有一些锦上添花的应用：
 
-- Working Copy 用来读读 Github 上的源码还不错，细节上的体验做的挺棒的
-- - Dash 用来查查文档
-- - Paste 一个很好用的剪切板
-- - Access 这个很有趣，通过 Eye-Tracking 来控制光标，之前在 iPhone 上玩过觉得还挺傻的，但是在 iPad 上突然变得有还有点用了。
-- - Medium 之前喜欢把上边的文章打印下来读，用上 iPad Pro 之后发现完全没必要了，阅读体验非常好。
-- - 1Password iPad Pro 上的体验完爆 MacBook Pro，不管是键盘输主密码还是通过 Touch Bar 指纹解锁，跟 iPad Pro 上丝滑的 Face ID 一比都是渣渣  
--
-- 有待解决的问题：
--
-- - 移动版浏览器太弱了，没有开发者模式，也不支持插件，页面上的操作很不便，尤其复制文本的时候太蠢了，如果移动版 Chrome 支持了 Vim 插件就完美了
-- - 强依赖网络，虽然有手机提供无限流量热点，但还是受限于4G信号和手机电量
--
-- iPad Pro 对于我来说，是一个体验最好的终端，工作上或一些依赖本地软件的事情，我依然要用 MacBook Pro 去做，iPad Pro 更多的价值在于补充而不是取代，利用其便捷性更充分的利用时间。
+
+- Dash 用来查查文档
+- Paste 一个很好用的剪切板
+- Access 这个很有趣，通过 Eye-Tracking 来控制光标，之前在 iPhone 上玩过觉得还挺傻的，但是在 iPad 上突然变得有还有点用了。
+- Medium 之前喜欢把上边的文章打印下来读，用上 iPad Pro 之后发现完全没必要了，阅读体验非常好。
+- 1Password iPad Pro 上的体验完爆 MacBook Pro，不管是键盘输主密码还是通过 Touch Bar 指纹解锁，跟 iPad Pro 上丝滑的 Face ID 一比都是渣渣 
+
+有待解决的问题：
+
+- 移动版浏览器太弱了，没有开发者模式，也不支持插件，页面上的操作很不便，尤其复制文本的时候太蠢了，如果移动版 Chrome 支持了 Vim 插件就完美了
+- 强依赖网络，虽然有手机提供无限流量热点，但还是受限于4G信号和手机电量
+
+iPad Pro 对于我来说，是一个体验最好的终端，工作上或一些依赖本地软件的事情，我依然要用 MacBook Pro 去做，iPad Pro 更多的价值在于补充而不是取代，利用其便捷性更充分的利用时间。
 
