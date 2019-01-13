@@ -1,4 +1,12 @@
-# 在 iPad Pro 上写代码
+# 
+---
+title: "在 iPad Pro 上写代码"
+date: "2019-01-14"
+layout: post
+draft: false
+path: "/posts/code-on-an-ipad/"
+category: "Hardware"
+---
 
 一直以来，我被一个沉重的问题所困扰，我有两台 MacBook Pro，一台公司发的用来工作，另一台是自己的用来写一些个人项目，为了应对工作中的突发状况，工作机器多数时间需要随身携带，每当我出差或者休假，就面临很尴尬的选择：
 
