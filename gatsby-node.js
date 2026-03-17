@@ -19,6 +19,7 @@ exports.createPages = async ({ graphql, actions }) => {
               }
               frontmatter {
                 title
+                type
               }
             }
           }
@@ -38,8 +39,12 @@ exports.createPages = async ({ graphql, actions }) => {
     const previous = index === posts.length - 1 ? null : posts[index + 1].node
     const next = index === 0 ? null : posts[index - 1].node
 
+    // Translations go to /translations/ prefix
+    const isTranslation = post.node.frontmatter?.type === 'translation'
+    const prefix = isTranslation ? '/translations' : ''
+
     createPage({
-      path: post.node.fields.slug,
+      path: `${prefix}${post.node.fields.slug}`,
       component: blogPost,
       context: {
         slug: post.node.fields.slug,
