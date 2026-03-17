@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Untitled - Rethink</title>
-  <meta name="description" content="">
+  <title>精酿啤酒饮用指南 - Rethink</title>
+  <meta name="description" content="简单聊聊精酿啤酒">
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <script>
@@ -66,7 +66,7 @@
     <nav class="mb-8">
       <ol class="flex items-center gap-2 text-sm mono text-slate-500">
         <li><a href="/" class="hover:text-black">Home</a></li>
-        <li>/</li><li><a href="/translations" class="hover:text-black">Translations</a></li><li>/</li>
+        <li>/</li><li><a href="/blog" class="hover:text-black">Writing</a></li><li>/</li>
         <li class="text-black">本文</li>
       </ol>
     </nav>
@@ -75,27 +75,49 @@
     <article class="blueprint-card p-8 md:p-12">
       <!-- Meta -->
       <div class="mb-8 pb-8 border-b border-slate-200">
-        <span class="section-title">translation</span>
-        <p class="mono text-sm text-slate-500 mt-2"></p>
+        <span class="section-title">writing</span>
+        <p class="mono text-sm text-slate-500 mt-2">2019-09-06</p>
       </div>
 
       <!-- Content -->
-      <h1>为终端构建高效的 AI 编程代理：脚手架、治理框架、上下文工程及经验教训</h1>
-<h2>摘要</h2>
-<p>AI 编程辅助领域正在经历从复杂 IDE 插件向通用终端原生代理的根本性转变。CLI 代理直接运行在开发者管理源代码、执行构建和部署环境的位置，为长期开发任务提供了前所未有的自主性。在本文中，我们提出了 OpenDev，一个用 Rust 编写的开源命令行编程代理，专为这一新范式而设计。有效的自主辅助需要严格的安全控制和高效的上下文管理，以防止上下文膨胀和推理退化。OpenDev 通过复合 AI 系统架构、工作负载专用模型路由、双代理架构（将规划与执行分离）、延迟工具发现，以及随时间推移逐步压缩旧观察结果的自适应上下文压缩来克服这些挑战。此外，它还采用自动记忆系统来跨会话累积项目特定知识，并通过事件驱动的系统提醒来对抗指令衰减。通过强制执行明确的推理阶段并优先考虑上下文效率，OpenDev 为终端优先 AI 辅助提供了一个安全、可扩展的基础，为健壮的自主软件工程提供了蓝图。</p>
-<h2>2 系统架构</h2>
-<h3>2.1 概述</h3>
-<p>OpenDev 的架构涵盖四个主要层：入口与 UI 层、Agent 层、工具与上下文层、以及持久化层。用户查询按照顺序流经这一管道，从入口点经过 Agent 推理和工具执行，然后结果被持久化并呈现。</p>
-<h4>入口与 UI 层</h4>
-<p>CLI 入口点解析参数并引导四个共享管理器（ConfigManager、SessionManager、ModeManager 和 ApprovalManager），这些管理器被注入到所有下游组件中。OpenDev 支持两个前端：一个是基于 Textual 构建的 TUI，使用阻塞式模态审批；另一个是由 FastAPI 和 WebSockets 支持的 Web UI，使用异步轮询审批。两者均实现了共享的 UICallback 协议，使 Agent 层与 UI 无关。</p>
-<h4>Agent 层</h4>
-<p>OpenDev 为不同的 LLM 分配五个专门的模型角色（第 2.2.5 节），每个角色都是延迟初始化的，并受本地缓存的能力注册表所驱动。该系统以两种模式运行：具有完整读写工具访问权限的普通模式（Normal Mode），以及仅限于只读工具的安全规划模式（Plan Mode）（第 2.2 节）。推理通过扩展 ReAct 循环（第 2.2.6 节）进行，每轮运行四个阶段：当 token 预算接近耗尽时的自动上下文压缩；可选的思考阶段，用于在可配置深度下进行行动前推理；可选的自我批评阶段；以及标准的 Reason-Act-Execute-Observe 行动阶段。</p>
-<h4>工具与上下文层</h4>
-<p>工具执行层围绕 ToolRegistry 构建，将调用分派到涵盖文件操作、进程执行和网络访问的类型化处理器，支持批量并行执行和按需 MCP 工具发现（第 2.4.7 节）。技能（Skills）系统延迟注入可重用的、领域特定的三级层次结构提示模板（内置、项目、用户）。上下文工程层通过四个子系统管理 LLM 上下文窗口：系统提醒（第 2.3.4 节）用于上下文感知的行为指导，提示合成器用于模块化系统提示组装，记忆用于跨会话连续性，以及压缩（第 2.3.6 节）用于回收 token 预算。</p>
-<h4>持久化层</h4>
-<p>OpenDev 通过四个存储库持久化状态：Config Manager 通过项目本地、用户全局、环境变量和内置默认值的层次结构解析设置；Session Manager 将完整对话历史保存为 JSON；Provider Cache 在本地存储模型能力元数据；操作日志跟踪文件更改以支持回滚。</p>
-<h4>安全架构</h4>
-<p>由于 Agent 可以执行任意 shell 命令、覆盖文件并生成持久进程，单一安全机制是不够的。因此，OpenDev 采用纵深防御架构，包含五个独立的安全层，每一层都设计用于独立防止一类危害，从而使任何单一故障点都不会危及系统。</p>
+      <h2>什么是精酿啤酒</h2>
+<ul>
+<li>首先排除工业啤酒 雪花、青岛、哈啤</li>
+<li>黑啤？大概率是，但并不是一个准备的分类，至于黑啤是什么，我后边会做解释</li>
+<li>IPA，也就是印度单色艾尔，是一个目前最流行的精酿啤酒种类</li>
+<li>美国酿酒师协会，精酿啤酒厂的定义<ul>
+<li>规模小。年度产量不多于600万桶，大约为美国年度啤酒总销量的3%</li>
+<li>独立性。不多于25%的股份被一家非精酿啤酒厂控股。</li>
+<li>坚持传统。酿酒厂生产啤酒中的绝大部分酒精应该来自传统原料和发酵过程。</li>
+</ul>
+</li>
+</ul>
+<p>泛指非大工业生产、用料讲究、种类扩展比较多的一类精致啤酒，但一直是个比较模糊的界定</p>
+<h2>什么是啤酒</h2>
+<p>要讲清楚什么是精酿啤酒，那我们先来看下什么是啤酒</p>
+<ul>
+<li>四种核心原料<ul>
+<li>水</li>
+<li>麦芽</li>
+<li>酒花</li>
+<li>酵母</li>
+</ul>
+</li>
+<li>酿造过程<ul>
+<li>粉碎 发芽的大麦经过粉碎，淀粉转变为酿酒所需的可溶性糖分</li>
+<li>糖化 糖化锅浸泡 1 小时，泡麦芽茶</li>
+<li>煮沸 加入酒花使麦芽汁苦化，增加口感和风味</li>
+<li>冷却 送入发酵罐</li>
+<li>发酵 加入酵母，艾尔（18<del>25摄氏度 7</del>10天），拉格（6<del>13摄氏度 2</del>3周）</li>
+<li>熟成 根据类型不同，瓶或木桶中 数周到数年不等</li>
+<li>装瓶</li>
+</ul>
+</li>
+</ul>
+<p>根据原料的不同，啤酒又可以分成庞大的风格</p>
+<h2>啤酒简史</h2>
+<p>中世纪之前，各国啤酒风格基本一致，被教会把持，神权逐渐没落，需要自立更深，多修道院便开始卖自己酿的啤酒，同时自家修道士也可以喝，修道院啤酒的起源</p>
+<p>后工业和互联网时代，生产力得到极大提高，消费升级，上世纪7/80年代起掀起了啤酒精酿运动。</p>
 
     </article>
   </main>

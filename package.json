@@ -1,0 +1,24 @@
+{
+  "name": "rethink-blog",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build": "node build.js",
+    "dev": "node build.js && npx serve ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yofine/Rethink.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yofine/Rethink/issues"
+  },
+  "homepage": "https://github.com/yofine/Rethink#readme",
+  "description": "",
+  "dependencies": {
+    "marked": "^17.0.4"
+  }
+}

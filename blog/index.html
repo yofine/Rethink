@@ -35,8 +35,8 @@
         <p class="text-xs text-slate-500 mono mt-1">ENGINEERING NOTEBOOK</p>
       </div>
       <nav class="flex gap-6 text-sm">
-        <a href="/blog" class="text-black font-medium">WRITING</a>
-        <a href="/translations" class="text-slate-600 hover:text-black">TRANSLATIONS</a>
+        <a href="/blog" class="writing == 'writing' ? 'text-black font-medium' : 'text-slate-600 hover:text-black'">WRITING</a>
+        <a href="/translations" class="{{ACTIVE}} == 'translation' ? 'text-black font-medium' : 'text-slate-600 hover:text-black'">TRANSLATIONS</a>
         <a href="/about" class="text-slate-600 hover:text-black">ABOUT</a>
       </nav>
     </div>
@@ -48,7 +48,7 @@
     <section class="mb-12">
       <div class="blueprint-card p-8">
         <p class="section-title mb-3">Module</p>
-        <h2 class="text-3xl font-bold">技术文章</h2>
+        <h2 class="text-3xl font-bold">{{TITLE}}</h2>
         <p class="text-slate-500 mt-3">关于编程、架构、工程的个人笔记</p>
       </div>
     </section>
@@ -56,18 +56,19 @@
     <!-- Post List -->
     <section>
       <div class="space-y-4">
-        <!-- Post -->
-        <article class="blueprint-card p-6 hover:border-slate-400 transition-colors">
-          <div class="flex items-start justify-between gap-4">
-            <div class="flex-1">
-              <span class="text-xs mono text-slate-400">2019-09-06</span>
-              <a href="./精酿啤酒/">
-                <h3 class="text-xl font-semibold mt-2 hover:underline">精酿啤酒饮用指南</h3>
-              </a>
-              <p class="text-sm text-slate-500 mt-2">简单聊聊精酿啤酒</p>
-            </div>
-          </div>
-        </article>
+        
+    <article class="blueprint-card p-6 hover:border-slate-400 transition-colors">
+      <div class="flex items-start justify-between gap-4">
+        <div class="flex-1">
+          <span class="text-xs mono text-slate-400">2019-09-06</span>
+          <a href="./精酿啤酒/">
+            <h3 class="text-xl font-semibold mt-2 hover:underline">精酿啤酒饮用指南</h3>
+          </a>
+          <p class="text-sm text-slate-500 mt-2">简单聊聊精酿啤酒</p>
+        </div>
+      </div>
+    </article>
+  
       </div>
     </section>
   </main>
