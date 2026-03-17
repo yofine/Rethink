@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rethink - 重新思考</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            blueprint: {
+              bg: '#f8fafc',
+              canvas: '#ffffff',
+              border: '#cbd5e1',
+              text: '#0f172a',
+              sub: '#64748b',
+              accent: '#0f172a',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    :root {
+      --c-bg: #f8fafc;
+      --c-canvas: #ffffff;
+      --c-border: #cbd5e1;
+      --c-text: #0f172a;
+      --c-sub: #64748b;
+    }
+    body {
+      background: var(--c-bg);
+      color: var(--c-text);
+    }
+    .blueprint-card {
+      background: var(--c-canvas);
+      border: 1px solid var(--c-border);
+    }
+    .blueprint-line {
+      border-color: var(--c-border);
+    }
+    .mono {
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .section-title {
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--c-sub);
+    }
+    a {
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body class="min-h-screen">
+  <!-- Header -->
+  <header class="border-b border-slate-300 bg-white">
+    <div class="max-w-4xl mx-auto px-6 py-4 flex items-center justify-between">
+      <div>
+        <h1 class="text-2xl font-semibold tracking-tight">RETHINK</h1>
+        <p class="text-xs text-slate-500 mono mt-1">ENGINEERING NOTEBOOK</p>
+      </div>
+      <nav class="flex gap-6 text-sm">
+        <a href="/blog" class="text-slate-600 hover:text-black">WRITING</a>
+        <a href="/translations" class="text-slate-600 hover:text-black">TRANSLATIONS</a>
+        <a href="/about" class="text-slate-600 hover:text-black">ABOUT</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="max-w-4xl mx-auto px-6 py-12">
+    <!-- Hero Section -->
+    <section class="mb-16">
+      <div class="blueprint-card p-8">
+        <p class="section-title mb-3">Introduction</p>
+        <h2 class="text-4xl font-bold leading-tight mb-4">
+          记录与翻译<br>关于软件工程的思考
+        </h2>
+        <p class="text-slate-600 max-w-xl leading-relaxed">
+          这里存放技术文章、翻译笔记和工程实践。
+          风格如这份文档：简洁、直接、注重内容。
+        </p>
+      </div>
+    </section>
+
+    <!-- Categories -->
+    <section class="mb-12">
+      <div class="grid grid-cols-2 gap-4">
+        <!-- Writing -->
+        <a href="/blog" class="blueprint-card p-6 group">
+          <div class="flex items-center justify-between mb-4">
+            <span class="section-title">Writing</span>
+            <span class="text-xs mono text-slate-400">5 articles</span>
+          </div>
+          <h3 class="text-xl font-semibold mb-2 group-hover:underline">
+            技术文章
+          </h3>
+          <p class="text-sm text-slate-500">
+            关于编程、架构、工程的个人笔记
+          </p>
+        </a>
+        
+        <!-- Translations -->
+        <a href="/translations" class="blueprint-card p-6 group">
+          <div class="flex items-center justify-between mb-4">
+            <span class="section-title">Translations</span>
+            <span class="text-xs mono text-slate-400">2 articles</span>
+          </div>
+          <h3 class="text-xl font-semibold mb-2 group-hover:underline">
+            翻译文章
+          </h3>
+          <p class="text-sm text-slate-500">
+            英文技术博客与论文的中文翻译
+          </p>
+        </a>
+      </div>
+    </section>
+
+    <!-- Recent Posts -->
+    <section>
+      <div class="border-b border-slate-300 mb-6 pb-2">
+        <h3 class="section-title">Recent Updates</h3>
+      </div>
+      
+      <div class="space-y-4">
+        <!-- Translation Post 1 -->
+        <article class="blueprint-card p-5 hover:border-slate-400 transition-colors">
+          <div class="flex items-start justify-between gap-4">
+            <div>
+              <span class="text-xs mono text-slate-400">2026-03-18</span>
+              <a href="/translations/2026-03-openDev-terminal-ai-agents/">
+                <h4 class="text-lg font-medium mt-1 hover:underline">
+                  为终端构建高效的 AI 编程代理
+                </h4>
+              </a>
+              <p class="text-sm text-slate-500 mt-2">
+                OpenDev 论文翻译：脚手架、治理框架、上下文工程及经验教训
+              </p>
+            </div>
+            <span class="text-xs border border-slate-300 px-2 py-1 shrink-0">翻译</span>
+          </div>
+        </article>
+
+        <!-- Translation Post 2 -->
+        <article class="blueprint-card p-5 hover:border-slate-400 transition-colors">
+          <div class="flex items-start justify-between gap-4">
+            <div>
+              <span class="text-xs mono text-slate-400">2026-03-18</span>
+              <a href="/translations/2026-03-what-is-harness/">
+                <h4 class="text-lg font-medium mt-1 hover:underline">
+                  重新定义 Harness：Agent = Model + Harness
+                </h4>
+              </a>
+              <p class="text-sm text-slate-500 mt-2">
+                关于 AI Agent 中 Harness 概念的深度解读
+              </p>
+            </div>
+            <span class="text-xs border border-slate-300 px-2 py-1 shrink-0">翻译</span>
+          </div>
+        </article>
+
+        <!-- Original Post -->
+        <article class="blueprint-card p-5 hover:border-slate-400 transition-colors">
+          <div class="flex items-start justify-between gap-4">
+            <div>
+              <span class="text-xs mono text-slate-400">2019-09-06</span>
+              <a href="/blog/精酿啤酒/">
+                <h4 class="text-lg font-medium mt-1 hover:underline">
+                  精酿啤酒饮用指南
+                </h4>
+              </a>
+              <p class="text-sm text-slate-500 mt-2">
+                简单聊聊精酿啤酒
+              </p>
+            </div>
+            <span class="text-xs border border-slate-300 px-2 py-1 shrink-0">写作</span>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-slate-300 mt-16">
+    <div class="max-w-4xl mx-auto px-6 py-8">
+      <div class="flex items-center justify-between text-sm text-slate-500">
+        <p class="mono">Rethink © 2026</p>
+        <p class="mono">Built with HTML + Tailwind</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

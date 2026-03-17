@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>翻译文章 - Rethink</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            blueprint: {
+              bg: '#f8fafc',
+              canvas: '#ffffff',
+              border: '#cbd5e1',
+              text: '#0f172a',
+              sub: '#64748b',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    :root {
+      --c-bg: #f8fafc;
+      --c-canvas: #ffffff;
+      --c-border: #cbd5e1;
+      --c-text: #0f172a;
+      --c-sub: #64748b;
+    }
+    body { background: var(--c-bg); color: var(--c-text); }
+    .blueprint-card { background: var(--c-canvas); border: 1px solid var(--c-border); }
+    .section-title { font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--c-sub); }
+    .mono { font-family: 'JetBrains Mono', monospace; }
+    a { text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    article h2 { font-size: 1.5rem; font-weight: 600; margin: 2rem 0 1rem; }
+    article h3 { font-size: 1.25rem; font-weight: 600; margin: 1.5rem 0 0.75rem; }
+    article p { line-height: 1.75; margin-bottom: 1rem; }
+    article ul, article ol { margin: 1rem 0; padding-left: 1.5rem; }
+    article li { margin: 0.5rem 0; line-height: 1.75; }
+    article ul { list-style-type: disc; }
+    article ol { list-style-type: decimal; }
+    article blockquote { 
+      border-left: 3px solid var(--c-text); 
+      padding-left: 1rem; 
+      margin: 1.5rem 0;
+      font-style: italic;
+      color: var(--c-sub);
+    }
+    article code { 
+      background: #f1f5f9; 
+      padding: 0.125rem 0.375rem; 
+      font-size: 0.875rem;
+      font-family: 'JetBrains Mono', monospace;
+    }
+    article pre { 
+      background: #1e293b; 
+      color: #e2e8f0;
+      padding: 1rem; 
+      overflow-x: auto;
+      margin: 1.5rem 0;
+    }
+    article pre code { 
+      background: none; 
+      padding: 0; 
+      color: inherit;
+    }
+    article hr { border: none; border-top: 1px solid var(--c-border); margin: 2rem 0; }
+    article strong { font-weight: 600; }
+  </style>
+</head>
+<body class="min-h-screen">
+  <!-- Header -->
+  <header class="border-b border-slate-300 bg-white">
+    <div class="max-w-4xl mx-auto px-6 py-4 flex items-center justify-between">
+      <div>
+        <a href="/">
+          <h1 class="text-2xl font-semibold tracking-tight hover:underline">RETHINK</h1>
+        </a>
+        <p class="text-xs text-slate-500 mono mt-1">ENGINEERING NOTEBOOK</p>
+      </div>
+      <nav class="flex gap-6 text-sm">
+        <a href="/blog" class="text-slate-600 hover:text-black">WRITING</a>
+        <a href="/translations" class="text-black font-medium">TRANSLATIONS</a>
+        <a href="/about" class="text-slate-600 hover:text-black">ABOUT</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="max-w-4xl mx-auto px-6 py-12">
+    <!-- Page Title -->
+    <section class="mb-12">
+      <div class="blueprint-card p-8">
+        <p class="section-title mb-3">Module</p>
+        <h2 class="text-3xl font-bold">翻译文章</h2>
+        <p class="text-slate-500 mt-3">英文技术博客与论文的中文翻译</p>
+      </div>
+    </section>
+
+    <!-- Post List -->
+    <section>
+      <div class="space-y-4">
+        <!-- Post 1 -->
+        <article class="blueprint-card p-6 hover:border-slate-400 transition-colors">
+          <div class="flex items-start justify-between gap-4">
+            <div class="flex-1">
+              <span class="text-xs mono text-slate-400">2026-03-18</span>
+              <a href="./2026-03-openDev-terminal-ai-agents/">
+                <h3 class="text-xl font-semibold mt-2 hover:underline">
+                  为终端构建高效的 AI 编程代理：脚手架、治理框架、上下文工程及经验教训
+                </h3>
+              </a>
+              <p class="text-sm text-slate-500 mt-2">
+                OpenDev 论文翻译。AI 编程辅助领域正在经历从复杂 IDE 插件向通用终端原生代理的根本性转变...
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <!-- Post 2 -->
+        <article class="blueprint-card p-6 hover:border-slate-400 transition-colors">
+          <div class="flex items-start justify-between gap-4">
+            <div class="flex-1">
+              <span class="text-xs mono text-slate-400">2026-03-18</span>
+              <a href="./2026-03-what-is-harness/">
+                <h3 class="text-xl font-semibold mt-2 hover:underline">
+                  重新定义 Harness：Agent = Model + Harness
+                </h3>
+              </a>
+              <p class="text-sm text-slate-500 mt-2">
+                关于 AI Agent 中 Harness 概念的深度解读。Harness 工程是我们围绕模型构建系统以将其转化为工作引擎的方式...
+              </p>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-slate-300 mt-16">
+    <div class="max-w-4xl mx-auto px-6 py-8">
+      <div class="flex items-center justify-between text-sm text-slate-500">
+        <p class="mono">Rethink © 2026</p>
+        <p class="mono">Built with HTML + Tailwind</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
